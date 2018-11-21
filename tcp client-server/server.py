@@ -2,9 +2,10 @@ import socket
 
 serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+serverName = socket.gethostbyname(socket.gethostname())
 serverPort = 12000
 
-serverSocket.bind(('192.168.0.103', serverPort))
+serverSocket.bind((serverName, serverPort))
 print("The server is ready")
 
 serverSocket.listen(3)
